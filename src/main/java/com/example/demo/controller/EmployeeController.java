@@ -31,4 +31,9 @@ public class EmployeeController implements EmployeeResource {
     public ResponseEntity<Employee> createManagerEmployee(ManagerEmployeeRequest managerRequest) {
         return ResponseEntity.status(HttpStatus.CREATED).body(employeeService.createManagerEmployee(managerRequest));
     }
+
+    @Override
+    public ResponseEntity<Employee> getVendorEmployeeById(Long id) {
+        return ResponseEntity.ok(employeeService.getVendorEmployeeById(id));
+    }
 }

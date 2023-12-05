@@ -26,17 +26,6 @@ public class EmployeeBuilder {
         return this;
     }
 
-    private void buildEmployee(Employee employee, EmployeeRequest request) {
-        employee.setName(request.getName());
-        employee.setAge(request.getAge());
-        employee.setCity(request.getCity());
-        employee.setState(request.getState().getAcronym());
-        employee.setSalary(request.getSalary());
-        employee.setPhoneNumber(request.getPhoneNumber());
-        employee.setPersonRole(request.getPersonRole().getRoleId());
-        employee.setInsertionDate(Timestamp.valueOf(LocalDateTime.now()));
-    }
-
     public Manager buildManager() {
         Manager manager = new Manager();
         buildEmployee(manager, managerRequest);
@@ -51,5 +40,16 @@ public class EmployeeBuilder {
         vendor.setMonthSalesQuantity(vendorRequest.getMonthSalesQuantity());
         vendor.setMonthSalaryBonus(vendorRequest.getMonthSalaryBonus());
         return vendor;
+    }
+
+    private void buildEmployee(Employee employee, EmployeeRequest request) {
+        employee.setName(request.getName());
+        employee.setAge(request.getAge());
+        employee.setCity(request.getCity());
+        employee.setState(request.getState().getAcronym());
+        employee.setSalary(request.getSalary());
+        employee.setPhoneNumber(request.getPhoneNumber());
+        employee.setPersonRole(request.getPersonRole().getRoleId());
+        employee.setInsertionDate(Timestamp.valueOf(LocalDateTime.now()));
     }
 }

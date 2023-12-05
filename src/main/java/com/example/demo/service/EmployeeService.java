@@ -8,4 +8,6 @@ public interface EmployeeService {
     Employee createVendorEmployee(VendorEmployeeRequest vendorRequest);
 
     Employee createManagerEmployee(ManagerEmployeeRequest managerRequest);
+
+    Employee getVendorEmployeeById(Long id);
 }

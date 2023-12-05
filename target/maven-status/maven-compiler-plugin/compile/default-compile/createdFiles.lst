@@ -4,7 +4,6 @@ com\example\demo\enums\PersonRole.class
 com\example\demo\controller\EmployeeController.class
 com\example\demo\model\User.class
 com\example\demo\model\Vendor.class
-com\example\demo\repository\EmployeeRepository.class
 com\example\demo\rest\request\EmployeeRequest.class
 com\example\demo\enums\States.class
 com\example\demo\rest\request\VendorEmployeeRequest.class
