@@ -1,13 +1,23 @@
 package com.example.demo.service;
 
-import com.example.demo.model.Employee;
-import com.example.demo.rest.request.ManagerEmployeeRequest;
-import com.example.demo.rest.request.VendorEmployeeRequest;
+import com.example.demo.rest.dto.EmployeeDTO;
+import com.example.demo.rest.dto.ManagerEmployeeDTO;
+import com.example.demo.rest.dto.VendorEmployeeDTO;
+
+import java.util.List;
 
 public interface EmployeeService {
-    Employee createVendorEmployee(VendorEmployeeRequest vendorRequest);
+    EmployeeDTO createVendorEmployee(VendorEmployeeDTO vendorRequest);
 
-    Employee createManagerEmployee(ManagerEmployeeRequest managerRequest);
+    EmployeeDTO createManagerEmployee(ManagerEmployeeDTO managerRequest);
 
-    Employee getVendorEmployeeById(Long id);
+    EmployeeDTO getVendorEmployeeById(Long id);
+
+    EmployeeDTO getManagerEmployeeById(Long id);
+
+    List<VendorEmployeeDTO> getAllVendorEmployees();
+
+    List<ManagerEmployeeDTO> getAllManagerEmployees();
+
+    void deleteEmployeeById(Long id);
 }

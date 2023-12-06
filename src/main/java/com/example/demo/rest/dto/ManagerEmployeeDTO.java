@@ -1,11 +1,11 @@
-package com.example.demo.rest.request;
+package com.example.demo.rest.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class ManagerEmployeeRequest extends EmployeeRequest {
+public class ManagerEmployeeDTO extends EmployeeDTO {
 
     private String managementArea;
 

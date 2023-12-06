@@ -1,15 +1,13 @@
-package com.example.demo.rest.request;
+package com.example.demo.rest.dto;
 
 import com.example.demo.enums.PersonRole;
 import com.example.demo.enums.States;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDateTime;
-
 @Getter
 @Setter
-public abstract class EmployeeRequest {
+public abstract class EmployeeDTO {
 
     protected Long id;
     protected String name;

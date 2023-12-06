@@ -1,11 +1,11 @@
-package com.example.demo.rest.request;
+package com.example.demo.rest.dto;
 
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class VendorEmployeeRequest extends EmployeeRequest {
+public class VendorEmployeeDTO extends EmployeeDTO {
 
     /**
      * - Quantidade de vendas feitas por esse funcionário.
