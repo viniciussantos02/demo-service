@@ -40,4 +40,12 @@ public enum States {
         this.state = state;
         this.acronym = acronym;
     }
+
+    public static States getStateFromAcronym(String acronym) {
+        for (States state : States.values()) {
+            if (state.getAcronym().equals(acronym)) return state;
+        }
+
+        return States.DISTRITO_FEDERAL;
+    }
 }

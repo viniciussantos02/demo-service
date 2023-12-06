@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 @Table(name = "employee")
 @Getter
 @Setter
+@DiscriminatorValue("not null")
 public abstract class Employee {
 
     @Id

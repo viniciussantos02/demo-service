@@ -1,17 +1,35 @@
 package com.example.demo.controller.resource;
 
-import com.example.demo.model.Employee;
-import com.example.demo.rest.request.ManagerEmployeeRequest;
-import com.example.demo.rest.request.VendorEmployeeRequest;
+import com.example.demo.rest.dto.EmployeeDTO;
+import com.example.demo.rest.dto.ManagerEmployeeDTO;
+import com.example.demo.rest.dto.VendorEmployeeDTO;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 public interface EmployeeResource {
 
     @PostMapping("/createVendorEmployee")
-    ResponseEntity<Employee> createVendorEmployee(@RequestBody VendorEmployeeRequest vendorRequest);
+    ResponseEntity<EmployeeDTO> createVendorEmployee(@RequestBody VendorEmployeeDTO vendorRequest);
 
     @PostMapping("/createManagerEmployee")
-    ResponseEntity<Employee> createManagerEmployee(@RequestBody ManagerEmployeeRequest managerRequest);
+    ResponseEntity<EmployeeDTO> createManagerEmployee(@RequestBody ManagerEmployeeDTO managerRequest);
+
+    @GetMapping("/getVendorEmployeeById/{id}")
+    ResponseEntity<EmployeeDTO> getVendorEmployeeById(@PathVariable Long id);
+
+    @GetMapping("/getManagerEmployeeById/{id}")
+    ResponseEntity<EmployeeDTO> getManagerEmployeeById(@PathVariable Long id);
+
+    @GetMapping("/getAllVendorEmployees")
+    ResponseEntity<List<VendorEmployeeDTO>> getAllVendorEmployees();
+
+    @GetMapping("/getAllManagerEmployees")
+    ResponseEntity<List<ManagerEmployeeDTO>> getAllManagerEmployees();
+
+    @DeleteMapping("/deleteEmployeeById/{id}")
+    ResponseEntity<Void> deleteEmployeeById(@PathVariable Long id);
+
+
 }
