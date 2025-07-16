@@ -9,6 +9,7 @@ import com.example.demo.rest.dto.EmployeeDTOBuilder;
 import com.example.demo.rest.dto.ManagerEmployeeDTO;
 import com.example.demo.rest.dto.VendorEmployeeDTO;
 import com.example.demo.service.EmployeeService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final VendorEmployeeRepository vendorEmployeeRepository;
@@ -24,19 +26,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    private EmployeeBuilder employeeBuilder;
+    private final EmployeeBuilder employeeBuilder;
 
-    private EmployeeDTOBuilder employeeDTOBuilder;
-
-    @Autowired
-    public EmployeeServiceImpl(VendorEmployeeRepository vendorEmployeeRepository, ManagerEmployeeRepository managerEmployeeRepository, EmployeeRepository employeeRepository, EmployeeBuilder employeeBuilder,
-                               EmployeeDTOBuilder employeeDTOBuilder) {
-        this.vendorEmployeeRepository = vendorEmployeeRepository;
-        this.managerEmployeeRepository = managerEmployeeRepository;
-        this.employeeRepository = employeeRepository;
-        this.employeeBuilder = employeeBuilder;
-        this.employeeDTOBuilder = employeeDTOBuilder;
-    }
+    private final EmployeeDTOBuilder employeeDTOBuilder;
 
     @Override
     public EmployeeDTO createVendorEmployee(VendorEmployeeDTO vendorRequest) {

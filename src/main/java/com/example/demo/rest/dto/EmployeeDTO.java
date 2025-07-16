@@ -3,10 +3,12 @@ package com.example.demo.rest.dto;
 import com.example.demo.enums.PersonRole;
 import com.example.demo.enums.States;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public abstract class EmployeeDTO {
 
     protected Long id;
