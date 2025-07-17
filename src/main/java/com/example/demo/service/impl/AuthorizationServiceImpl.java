@@ -7,6 +7,18 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * Serviço responsável pela autenticação de usuários.
+ *
+ * <p>Essa classe implementa a interface {@link org.springframework.security.core.userdetails.UserDetailsService}
+ * e é automaticamente utilizada pelo Spring Security para carregar os dados do usuário durante o processo de login.</p>
+ *
+ *
+ *
+ * @author Vinicius Pereira
+ * @since 1.0
+ * @version 1.0
+ */
 @Service
 @RequiredArgsConstructor
 public class AuthorizationServiceImpl implements UserDetailsService {
@@ -15,6 +27,6 @@ public class AuthorizationServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return null;
+        return userRepository.findByUsername(username);
     }
 }
