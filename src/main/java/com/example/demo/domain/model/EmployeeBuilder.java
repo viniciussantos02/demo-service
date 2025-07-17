@@ -1,8 +1,8 @@
-package com.example.demo.model;
+package com.example.demo.domain.model;
 
-import com.example.demo.rest.dto.EmployeeDTO;
-import com.example.demo.rest.dto.ManagerEmployeeDTO;
-import com.example.demo.rest.dto.VendorEmployeeDTO;
+import com.example.demo.domain.model.dto.EmployeeDTO;
+import com.example.demo.domain.model.dto.ManagerEmployeeDTO;
+import com.example.demo.domain.model.dto.VendorEmployeeDTO;
 import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;

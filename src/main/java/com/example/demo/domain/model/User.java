@@ -1,6 +1,6 @@
-package com.example.demo.model;
+package com.example.demo.domain.model;
 
-import com.example.demo.enums.PersonRole;
+import com.example.demo.domain.enums.PersonRole;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

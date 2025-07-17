@@ -1,8 +1,9 @@
 package com.example.demo.controller.resource;
 
-import com.example.demo.rest.dto.EmployeeDTO;
-import com.example.demo.rest.dto.ManagerEmployeeDTO;
-import com.example.demo.rest.dto.VendorEmployeeDTO;
+import com.example.demo.domain.model.dto.EmployeeDTO;
+import com.example.demo.domain.model.dto.ManagerEmployeeDTO;
+import com.example.demo.domain.model.dto.VendorEmployeeDTO;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -23,7 +24,7 @@ public interface EmployeeResource {
     ResponseEntity<EmployeeDTO> getManagerEmployeeById(@PathVariable Long id);
 
     @GetMapping("/getAllVendorEmployees")
-    ResponseEntity<List<VendorEmployeeDTO>> getAllVendorEmployees();
+    ResponseEntity<List<VendorEmployeeDTO>> getAllVendorEmployees(@RequestHeader(value = HttpHeaders.AUTHORIZATION) String authorization);
 
     @GetMapping("/getAllManagerEmployees")
     ResponseEntity<List<ManagerEmployeeDTO>> getAllManagerEmployees();

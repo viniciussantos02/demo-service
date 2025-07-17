@@ -1,16 +1,15 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.model.EmployeeBuilder;
-import com.example.demo.repository.EmployeeRepository;
-import com.example.demo.repository.ManagerEmployeeRepository;
-import com.example.demo.repository.VendorEmployeeRepository;
-import com.example.demo.rest.dto.EmployeeDTO;
-import com.example.demo.rest.dto.EmployeeDTOBuilder;
-import com.example.demo.rest.dto.ManagerEmployeeDTO;
-import com.example.demo.rest.dto.VendorEmployeeDTO;
+import com.example.demo.domain.model.EmployeeBuilder;
+import com.example.demo.domain.repository.EmployeeRepository;
+import com.example.demo.domain.repository.ManagerEmployeeRepository;
+import com.example.demo.domain.repository.VendorEmployeeRepository;
+import com.example.demo.domain.model.dto.EmployeeDTO;
+import com.example.demo.domain.model.dto.EmployeeDTOBuilder;
+import com.example.demo.domain.model.dto.ManagerEmployeeDTO;
+import com.example.demo.domain.model.dto.VendorEmployeeDTO;
 import com.example.demo.service.EmployeeService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

@@ -1,11 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.controller.resource.EmployeeResource;
-import com.example.demo.rest.dto.EmployeeDTO;
-import com.example.demo.rest.dto.ManagerEmployeeDTO;
-import com.example.demo.rest.dto.VendorEmployeeDTO;
+import com.example.demo.domain.model.dto.EmployeeDTO;
+import com.example.demo.domain.model.dto.ManagerEmployeeDTO;
+import com.example.demo.domain.model.dto.VendorEmployeeDTO;
 import com.example.demo.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,14 +15,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
+@RequiredArgsConstructor
 public class EmployeeController implements EmployeeResource {
 
     private final EmployeeService employeeService;
-
-    @Autowired
-    public EmployeeController(EmployeeService employeeService) {
-        this.employeeService = employeeService;
-    }
 
     @Override
     public ResponseEntity<EmployeeDTO> createVendorEmployee(VendorEmployeeDTO vendorRequest) {
@@ -45,7 +41,7 @@ public class EmployeeController implements EmployeeResource {
     }
 
     @Override
-    public ResponseEntity<List<VendorEmployeeDTO>> getAllVendorEmployees() {
+    public ResponseEntity<List<VendorEmployeeDTO>> getAllVendorEmployees(String authorization) {
         return ResponseEntity.ok(employeeService.getAllVendorEmployees());
     }
 

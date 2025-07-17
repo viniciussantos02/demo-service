@@ -1,8 +1,8 @@
 package com.example.demo.mapper;
 
-import com.example.demo.enums.PersonRole;
-import com.example.demo.model.User;
-import com.example.demo.rest.dto.RegisterDTO;
+import com.example.demo.domain.enums.PersonRole;
+import com.example.demo.domain.model.User;
+import com.example.demo.domain.model.dto.RegisterDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;

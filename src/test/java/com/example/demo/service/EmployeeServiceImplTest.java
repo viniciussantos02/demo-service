@@ -1,14 +1,14 @@
 package com.example.demo.service;
 
-import com.example.demo.enums.PersonRole;
-import com.example.demo.enums.States;
-import com.example.demo.model.EmployeeBuilder;
-import com.example.demo.model.Vendor;
-import com.example.demo.repository.EmployeeRepository;
-import com.example.demo.repository.ManagerEmployeeRepository;
-import com.example.demo.repository.VendorEmployeeRepository;
-import com.example.demo.rest.dto.EmployeeDTOBuilder;
-import com.example.demo.rest.dto.VendorEmployeeDTO;
+import com.example.demo.domain.enums.PersonRole;
+import com.example.demo.domain.enums.States;
+import com.example.demo.domain.model.EmployeeBuilder;
+import com.example.demo.domain.model.Vendor;
+import com.example.demo.domain.repository.EmployeeRepository;
+import com.example.demo.domain.repository.ManagerEmployeeRepository;
+import com.example.demo.domain.repository.VendorEmployeeRepository;
+import com.example.demo.domain.model.dto.EmployeeDTOBuilder;
+import com.example.demo.domain.model.dto.VendorEmployeeDTO;
 import com.example.demo.service.impl.EmployeeServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,7 +16,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;

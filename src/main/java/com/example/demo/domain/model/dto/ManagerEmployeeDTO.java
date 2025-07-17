@@ -1,4 +1,4 @@
-package com.example.demo.rest.dto;
+package com.example.demo.domain.model.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

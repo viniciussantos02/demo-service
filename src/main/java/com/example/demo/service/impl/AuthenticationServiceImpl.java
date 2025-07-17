@@ -1,8 +1,8 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.mapper.UserMapper;
-import com.example.demo.repository.UserRepository;
-import com.example.demo.rest.dto.RegisterDTO;
+import com.example.demo.domain.repository.UserRepository;
+import com.example.demo.domain.model.dto.RegisterDTO;
 import com.example.demo.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
