@@ -1,10 +1,10 @@
-package com.example.demo.rest.dto;
+package com.example.demo.domain.model.dto;
 
-import com.example.demo.enums.PersonRole;
-import com.example.demo.enums.States;
-import com.example.demo.model.Employee;
-import com.example.demo.model.Manager;
-import com.example.demo.model.Vendor;
+import com.example.demo.domain.enums.PersonRole;
+import com.example.demo.domain.enums.States;
+import com.example.demo.domain.model.Employee;
+import com.example.demo.domain.model.Manager;
+import com.example.demo.domain.model.Vendor;
 import org.springframework.stereotype.Component;
 
 @Component

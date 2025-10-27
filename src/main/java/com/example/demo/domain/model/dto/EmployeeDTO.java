@@ -1,12 +1,14 @@
-package com.example.demo.rest.dto;
+package com.example.demo.domain.model.dto;
 
-import com.example.demo.enums.PersonRole;
-import com.example.demo.enums.States;
+import com.example.demo.domain.enums.PersonRole;
+import com.example.demo.domain.enums.States;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public abstract class EmployeeDTO {
 
     protected Long id;

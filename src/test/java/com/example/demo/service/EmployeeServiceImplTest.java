@@ -1,27 +1,26 @@
 package com.example.demo.service;
 
-import com.example.demo.enums.PersonRole;
-import com.example.demo.enums.States;
-import com.example.demo.model.EmployeeBuilder;
-import com.example.demo.model.Vendor;
-import com.example.demo.repository.EmployeeRepository;
-import com.example.demo.repository.ManagerEmployeeRepository;
-import com.example.demo.repository.VendorEmployeeRepository;
-import com.example.demo.rest.dto.EmployeeDTOBuilder;
-import com.example.demo.rest.dto.VendorEmployeeDTO;
+import com.example.demo.domain.enums.PersonRole;
+import com.example.demo.domain.enums.States;
+import com.example.demo.domain.model.EmployeeBuilder;
+import com.example.demo.domain.model.Vendor;
+import com.example.demo.domain.repository.EmployeeRepository;
+import com.example.demo.domain.repository.ManagerEmployeeRepository;
+import com.example.demo.domain.repository.VendorEmployeeRepository;
+import com.example.demo.domain.model.dto.EmployeeDTOBuilder;
+import com.example.demo.domain.model.dto.VendorEmployeeDTO;
 import com.example.demo.service.impl.EmployeeServiceImpl;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
-public class EmployeeServiceImplTest {
+class EmployeeServiceImplTest {
 
     @Mock
     private VendorEmployeeRepository vendorEmployeeRepository;
@@ -41,13 +40,13 @@ public class EmployeeServiceImplTest {
     @InjectMocks
     private EmployeeServiceImpl employeeService;
 
-    @Before
-    public void contextLoads() {
+    @BeforeEach
+    void contextLoads() {
         MockitoAnnotations.initMocks(this);
     }
 
     @Test
-    public void createVendorEmployeeTest() {
+    void createVendorEmployeeTest() {
         Vendor vendor = getVendor();
 
         VendorEmployeeDTO vendorEmployeeDTO = getVendorDTO();
@@ -69,7 +68,7 @@ public class EmployeeServiceImplTest {
         assertEquals(vendorEmployeeDTO.getState(), response.getState());
     }
 
-    public Vendor getVendor() {
+    private Vendor getVendor() {
         Vendor vendor = new Vendor();
         vendor.setId(1L);
         vendor.setAge(23);
@@ -81,7 +80,7 @@ public class EmployeeServiceImplTest {
         return vendor;
     }
 
-    public VendorEmployeeDTO getVendorDTO() {
+    private VendorEmployeeDTO getVendorDTO() {
         VendorEmployeeDTO vendorDTO = new VendorEmployeeDTO();
         vendorDTO.setId(1L);
         vendorDTO.setAge(23);

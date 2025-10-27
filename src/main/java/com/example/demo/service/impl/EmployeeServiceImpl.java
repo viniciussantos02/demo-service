@@ -1,21 +1,22 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.model.EmployeeBuilder;
-import com.example.demo.repository.EmployeeRepository;
-import com.example.demo.repository.ManagerEmployeeRepository;
-import com.example.demo.repository.VendorEmployeeRepository;
-import com.example.demo.rest.dto.EmployeeDTO;
-import com.example.demo.rest.dto.EmployeeDTOBuilder;
-import com.example.demo.rest.dto.ManagerEmployeeDTO;
-import com.example.demo.rest.dto.VendorEmployeeDTO;
+import com.example.demo.domain.model.EmployeeBuilder;
+import com.example.demo.domain.repository.EmployeeRepository;
+import com.example.demo.domain.repository.ManagerEmployeeRepository;
+import com.example.demo.domain.repository.VendorEmployeeRepository;
+import com.example.demo.domain.model.dto.EmployeeDTO;
+import com.example.demo.domain.model.dto.EmployeeDTOBuilder;
+import com.example.demo.domain.model.dto.ManagerEmployeeDTO;
+import com.example.demo.domain.model.dto.VendorEmployeeDTO;
 import com.example.demo.service.EmployeeService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeServiceImpl implements EmployeeService {
 
     private final VendorEmployeeRepository vendorEmployeeRepository;
@@ -24,19 +25,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
 
-    private EmployeeBuilder employeeBuilder;
+    private final EmployeeBuilder employeeBuilder;
 
-    private EmployeeDTOBuilder employeeDTOBuilder;
-
-    @Autowired
-    public EmployeeServiceImpl(VendorEmployeeRepository vendorEmployeeRepository, ManagerEmployeeRepository managerEmployeeRepository, EmployeeRepository employeeRepository, EmployeeBuilder employeeBuilder,
-                               EmployeeDTOBuilder employeeDTOBuilder) {
-        this.vendorEmployeeRepository = vendorEmployeeRepository;
-        this.managerEmployeeRepository = managerEmployeeRepository;
-        this.employeeRepository = employeeRepository;
-        this.employeeBuilder = employeeBuilder;
-        this.employeeDTOBuilder = employeeDTOBuilder;
-    }
+    private final EmployeeDTOBuilder employeeDTOBuilder;
 
     @Override
     public EmployeeDTO createVendorEmployee(VendorEmployeeDTO vendorRequest) {
