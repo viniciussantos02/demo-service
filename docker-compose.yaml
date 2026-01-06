@@ -1,0 +1,31 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: demoservice-api
+    environment:
+      DB_HOST: mysql #Representa o service que foi criado logo abaixo para p MySQL. Se o nome fosse "batata-frita" isso é o que estaria ai.
+    depends_on:
+      - mysql
+    ports:
+      - 8080:8080
+    networks:
+      - demoservice-network
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: focusdatabase
+      MYSQL_USER: focususer
+      MYSQL_PASSWORD: root123
+    ports:
+      - 3306:3306
+    networks:
+      - demoservice-network
+
+networks:
+  demoservice-network:
+    driver: bridge
