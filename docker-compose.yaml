@@ -5,8 +5,8 @@ services:
       dockerfile: Dockerfile
     container_name: demoservice-api
     environment:
-      DB_HOST: mysql #Representa o service que foi criado logo abaixo para p MySQL. Se o nome fosse "batata-frita" isso é o que estaria ai.
-    depends_on:
+      DB_HOST: mysql #Representa o service que foi criado logo abaixo para o MySQL. Se o nome fosse "batata-frita" isso é o que estaria ai.
+    depends_on: #Diz que esse servico depende de outro, entao a ordem de build e start comeca pelo que ele depende.
       - mysql
     ports:
       - 8080:8080
@@ -21,6 +21,8 @@ services:
       MYSQL_DATABASE: focusdatabase
       MYSQL_USER: focususer
       MYSQL_PASSWORD: root123
+    volumes:
+      - mysql_data:/var/lib/mysql
     ports:
       - 3306:3306
     networks:
@@ -29,3 +31,6 @@ services:
 networks:
   demoservice-network:
     driver: bridge
+
+volumes:
+  mysql_data:
